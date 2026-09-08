@@ -66,23 +66,6 @@ const closeReason =
 
 
 /* =====================================================
-   LOADER
-===================================================== */
-
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-        loader.classList.add("hide");
-
-        document.body.style.overflow = "auto";
-
-    }, 1800);
-
-});
-
-
-/* =====================================================
    CREATE STARS
 ===================================================== */
 
@@ -192,21 +175,6 @@ function unlockWebsite() {
                 Browser biasanya hanya mengizinkan
                 audio setelah user melakukan interaksi.
             */
-
-            music.play()
-                .then(() => {
-
-                    musicButton.classList.add("playing");
-
-                })
-                .catch(() => {});
-
-
-            setTimeout(() => {
-
-                revealElements();
-
-            }, 300);
 
         }, 700);
 
