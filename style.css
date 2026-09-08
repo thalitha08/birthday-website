@@ -1,0 +1,1837 @@
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root {
+    --dark: #100b10;
+    --dark-soft: #171018;
+    --dark-card: #211721;
+
+    --cream: #f4eee7;
+    --cream-soft: #e8ded5;
+
+    --rose: #d9a4b7;
+    --rose-light: #edc5d2;
+    --rose-dark: #a66f84;
+
+    --green: #52694d;
+    --green-light: #71866b;
+
+    --muted: #aaa0a8;
+    --muted-dark: #71666e;
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "DM Sans", sans-serif;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: var(--sans);
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.page,
+.section {
+    min-height: 100svh;
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    padding: 110px 24px;
+
+    overflow: hidden;
+}
+
+.section-container {
+    width: min(1080px, 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.section-container.narrow {
+    width: min(760px, 100%);
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255,255,255,.65);
+    border-radius: 50%;
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: .04;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 500;
+}
+
+.dark-eyebrow {
+    color: var(--rose-dark);
+}
+
+.section-heading {
+    margin-bottom: 60px;
+}
+
+.section-heading.centered {
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-family: var(--serif);
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: .88;
+    font-weight: 500;
+    color: var(--cream);
+}
+
+.section-heading h2 em {
+    color: var(--rose);
+    font-weight: 400;
+}
+
+.section-description {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: var(--dark);
+
+    display: grid;
+    place-items: center;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+#loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-symbol {
+    font-size: 30px;
+    color: var(--rose);
+    animation: loaderSpin 2s infinite;
+}
+
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-content p {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+}
+
+.loader-line {
+    width: 180px;
+    height: 1px;
+    background: rgba(255,255,255,.15);
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.loader-line span {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: var(--rose);
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+.opening-page {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(166,111,132,.12),
+            transparent 50%
+        ),
+        var(--dark);
+}
+
+.opening-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.opening-title {
+    margin-top: 30px;
+
+    font-family: var(--serif);
+    font-size: clamp(60px, 9vw, 120px);
+    font-weight: 400;
+    line-height: .82;
+}
+
+.opening-title span {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.opening-description {
+    margin-top: 35px;
+
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.primary-button {
+    margin-top: 40px;
+
+    border: 1px solid rgba(217,164,183,.5);
+    background: rgba(217,164,183,.08);
+
+    color: var(--cream);
+
+    padding: 15px 24px;
+
+    border-radius: 100px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    transition: .35s ease;
+}
+
+.primary-button:hover {
+    background: var(--rose);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.button-arrow {
+    font-size: 18px;
+}
+
+.sound-note {
+    margin-top: 20px;
+
+    color: #777;
+    font-size: 11px;
+}
+
+.ambient-light {
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: .12;
+}
+
+.light-one {
+    background: #b36f8b;
+    top: -150px;
+    left: -150px;
+}
+
+.light-two {
+    background: #77506a;
+    bottom: -150px;
+    right: -150px;
+}
+
+
+/* =====================================================
+   SECRET
+===================================================== */
+
+.secret-page {
+    background: var(--dark);
+}
+
+.secret-card {
+    text-align: center;
+    width: min(500px, 100%);
+}
+
+.secret-icon {
+    color: var(--rose);
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.secret-card h2 {
+    margin-top: 25px;
+
+    font-family: var(--serif);
+    font-size: 65px;
+    font-weight: 400;
+    line-height: .9;
+}
+
+.secret-card h2 span {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.secret-description {
+    margin-top: 30px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.code-wrapper {
+    margin-top: 40px;
+}
+
+.code-wrapper input {
+    width: 100%;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--cream);
+
+    text-align: center;
+
+    font-family: var(--serif);
+    font-size: 24px;
+
+    padding: 12px;
+}
+
+.input-line {
+    height: 1px;
+    width: 100%;
+    background: rgba(255,255,255,.2);
+}
+
+.code-message {
+    min-height: 25px;
+    margin-top: 20px;
+    color: var(--rose);
+}
+
+.code-hint {
+    margin-top: 20px;
+    color: #625961;
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   BIRTHDAY
+===================================================== */
+
+.birthday-section {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(183,120,145,.16),
+            transparent 42%
+        ),
+        var(--dark);
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.birthday-title {
+    margin-top: 25px;
+
+    font-family: var(--serif);
+    font-size: clamp(65px, 9vw, 115px);
+    line-height: .82;
+    font-weight: 400;
+}
+
+.birthday-title span {
+    color: var(--rose);
+    font-style: italic;
+}
+
+.hero-subtitle {
+    color: var(--muted);
+    margin-top: 25px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake-container {
+    width: 220px;
+    height: 220px;
+
+    position: relative;
+
+    margin: 35px auto 0;
+}
+
+.cake-glow {
+    position: absolute;
+    inset: 20px;
+
+    background: var(--rose);
+    filter: blur(50px);
+
+    opacity: .18;
+}
+
+.cake {
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    width: 130px;
+    height: 100px;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 130px;
+    height: 70px;
+
+    border-radius: 10px 10px 18px 18px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c693a4,
+            #986679
+        );
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,.3);
+}
+
+.cake-top {
+    position: absolute;
+
+    width: 130px;
+    height: 35px;
+
+    top: 5px;
+
+    border-radius: 50%;
+
+    background: #e1b8c5;
+
+    z-index: 2;
+}
+
+.cake-line {
+    height: 2px;
+    width: 80%;
+    margin: 20px auto 0;
+    background: rgba(255,255,255,.25);
+}
+
+.candle {
+    position: absolute;
+
+    left: 50%;
+    top: -40px;
+
+    width: 12px;
+    height: 45px;
+
+    transform: translateX(-50%);
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #e5b7c5,
+            #e5b7c5 5px,
+            #b97991 5px,
+            #b97991 8px
+        );
+
+    z-index: 5;
+}
+
+.flame {
+    position: absolute;
+
+    width: 16px;
+    height: 22px;
+
+    left: 50%;
+    top: -22px;
+
+    transform: translateX(-50%);
+
+    background: #f5c7a4;
+
+    border-radius:
+        50% 50% 50% 50% /
+        60% 60% 40% 40%;
+
+    box-shadow:
+        0 0 20px #f0b29b;
+}
+
+.cake-hint {
+    color: #746871;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.scroll-down {
+    margin-top: 35px;
+
+    background: none;
+    border: none;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CREAM SECTION
+===================================================== */
+
+.cream-section {
+    background: var(--cream);
+    color: #30282d;
+}
+
+.cream-section .section-heading h2 {
+    color: #30282d;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter-paper {
+    position: relative;
+
+    background: #eee4da;
+
+    padding: 60px;
+
+    color: #4b3d43;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.1);
+
+    line-height: 1.9;
+
+    font-family: var(--serif);
+    font-size: 18px;
+}
+
+.letter-paper p {
+    margin-bottom: 22px;
+}
+
+.paper-decoration {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    color: var(--rose-dark);
+}
+
+.letter-greeting {
+    font-size: 25px;
+    color: var(--rose-dark);
+}
+
+.letter-signature {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.letter-signature span {
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+
+/* =====================================================
+   BOUQUET SECTION
+===================================================== */
+
+.bouquet-section {
+    background: var(--dark-soft);
+}
+
+
+/* =====================================================
+   BOUQUET
+===================================================== */
+
+.bouquet {
+    position: relative;
+
+    width: 420px;
+    height: 430px;
+
+    margin: 20px auto 0;
+}
+
+
+/* =====================================================
+   STEMS
+===================================================== */
+
+.bouquet .stem {
+    position: absolute;
+
+    bottom: 75px;
+    left: 50%;
+
+    width: 5px;
+    height: 250px;
+
+    background:
+        linear-gradient(
+            to right,
+            #41583e,
+            #698062
+        );
+
+    border-radius: 10px;
+
+    transform-origin: bottom center;
+
+    z-index: 1;
+}
+
+.bouquet .stem-1 {
+    transform:
+        translateX(-50%)
+        rotate(-27deg);
+
+    height: 225px;
+}
+
+.bouquet .stem-2 {
+    transform:
+        translateX(-50%)
+        rotate(-13deg);
+
+    height: 270px;
+}
+
+.bouquet .stem-3 {
+    transform:
+        translateX(-50%)
+        rotate(0deg);
+
+    height: 295px;
+}
+
+.bouquet .stem-4 {
+    transform:
+        translateX(-50%)
+        rotate(13deg);
+
+    height: 270px;
+}
+
+.bouquet .stem-5 {
+    transform:
+        translateX(-50%)
+        rotate(27deg);
+
+    height: 225px;
+}
+
+
+/* =====================================================
+   FLOWERS
+===================================================== */
+
+.bouquet .flower {
+    position: absolute;
+
+    width: 76px;
+    height: 76px;
+
+    border: none;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #d69aaa 0 12%,
+            transparent 13%
+        );
+
+    color: #e3a9bb;
+
+    font-family: var(--serif);
+    font-size: 60px;
+
+    line-height: 1;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 8px 12px rgba(0,0,0,.3)
+        );
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+
+/* flower positions */
+
+.bouquet .flower-1 {
+    left: 70px;
+    top: 145px;
+
+    transform: scale(.78);
+}
+
+.bouquet .flower-2 {
+    left: 137px;
+    top: 78px;
+
+    transform: scale(.86);
+}
+
+.bouquet .flower-3 {
+    left: 172px;
+    top: 20px;
+
+    transform: scale(1);
+}
+
+.bouquet .flower-4 {
+    right: 137px;
+    top: 78px;
+
+    transform: scale(.86);
+}
+
+.bouquet .flower-5 {
+    right: 70px;
+    top: 145px;
+
+    transform: scale(.78);
+}
+
+
+/* =====================================================
+   FLOWER HOVER
+===================================================== */
+
+.bouquet .flower:hover {
+    filter:
+        drop-shadow(
+            0 0 18px rgba(220,160,180,.5)
+        );
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   LEAVES
+===================================================== */
+
+.bouquet .leaf {
+    position: absolute;
+
+    width: 70px;
+    height: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #71866b,
+            #465d42
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+    z-index: 2;
+
+    opacity: .95;
+}
+
+
+/* left upper leaf */
+
+.bouquet .leaf-1 {
+    left: 105px;
+    top: 195px;
+
+    transform: rotate(-35deg);
+}
+
+
+/* left lower leaf */
+
+.bouquet .leaf-2 {
+    left: 140px;
+    top: 245px;
+
+    transform: rotate(-55deg);
+}
+
+
+/* right upper leaf */
+
+.bouquet .leaf-3 {
+    right: 105px;
+    top: 195px;
+
+    transform:
+        scaleX(-1)
+        rotate(-35deg);
+}
+
+
+/* right lower leaf */
+
+.bouquet .leaf-4 {
+    right: 140px;
+    top: 245px;
+
+    transform:
+        scaleX(-1)
+        rotate(-55deg);
+}
+
+
+/* =====================================================
+   BOUQUET WRAPPER
+===================================================== */
+
+.bouquet .bouquet-wrap {
+    position: absolute;
+
+    left: 50%;
+    bottom: 20px;
+
+    width: 115px;
+    height: 100px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            135deg,
+            #c997aa,
+            #80586c
+        );
+
+    clip-path:
+        polygon(
+            14% 0,
+            86% 0,
+            68% 100%,
+            32% 100%
+        );
+
+    z-index: 10;
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,.3);
+}
+
+
+/* ribbon */
+
+.bouquet .bouquet-wrap span {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 12px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background:
+        rgba(255,255,255,.35);
+
+    border-radius: 5px;
+}
+
+
+/* =====================================================
+   FLOWER MESSAGE
+===================================================== */
+
+.flower-message {
+    width: min(90%, 520px);
+
+    margin: -5px auto 0;
+
+    text-align: center;
+
+    color: var(--rose);
+
+    font-family: var(--serif);
+
+    font-size: 24px;
+
+    line-height: 1.45;
+
+    min-height: 70px;
+
+    padding: 0 10px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+}
+
+
+/* =====================================================
+   MEMORIES
+===================================================== */
+
+.memories-section {
+    background: var(--dark);
+}
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.memory-card {
+    background: var(--dark-card);
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    overflow: hidden;
+}
+
+.memory-large {
+    grid-row: span 2;
+}
+
+.memory-wide {
+    grid-column: span 2;
+}
+
+.photo-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #1b151b;
+}
+
+.memory-large .photo-wrapper {
+    height: 690px;
+}
+
+.memory-wide .photo-wrapper {
+    height: 400px;
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.memory-card:hover img {
+    transform: scale(1.04);
+}
+
+.photo-placeholder {
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: #655b62;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.memory-caption {
+    padding: 25px;
+}
+
+.memory-caption span {
+    color: var(--rose);
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.memory-caption p {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline {
+    position: relative;
+
+    padding-left: 60px;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        rgba(80,60,70,.2);
+}
+
+.timeline-item {
+    position: relative;
+
+    margin-bottom: 90px;
+}
+
+.timeline-number {
+    position: absolute;
+
+    left: -60px;
+    top: 0;
+
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    border: 1px solid var(--rose-dark);
+
+    color: var(--rose-dark);
+
+    font-size: 10px;
+}
+
+.timeline-content span {
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: var(--rose-dark);
+}
+
+.timeline-content h3 {
+    margin-top: 12px;
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    margin-top: 20px;
+
+    color: #6b5d64;
+
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   REASONS
+===================================================== */
+
+.reasons-section {
+    background: var(--dark-soft);
+}
+
+.reason-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.reason-card {
+    position: relative;
+
+    min-height: 170px;
+
+    padding: 30px;
+
+    background: var(--dark-card);
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    color: var(--cream);
+
+    text-align: left;
+
+    transition: .35s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(217,164,183,.35);
+}
+
+.reason-card span {
+    display: block;
+
+    color: var(--rose);
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.reason-card strong {
+    display: block;
+
+    margin-top: 30px;
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+.reason-card i {
+    position: absolute;
+
+    right: 25px;
+    bottom: 20px;
+
+    font-style: normal;
+
+    color: var(--rose);
+
+    font-size: 22px;
+}
+
+
+/* =====================================================
+   REASON POPUP
+===================================================== */
+
+.reason-popup {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    width: min(500px, calc(100% - 40px));
+
+    padding: 50px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.9);
+
+    background: #211721;
+
+    border: 1px solid rgba(217,164,183,.25);
+
+    z-index: 500;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s ease;
+}
+
+.reason-popup.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+.reason-popup p {
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    color: var(--cream);
+
+    text-align: center;
+}
+
+.close-popup {
+    position: absolute;
+
+    right: 15px;
+    top: 12px;
+
+    background: none;
+    border: none;
+
+    color: var(--muted);
+
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final-section {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(183,120,145,.14),
+            transparent 50%
+        ),
+        var(--dark);
+}
+
+.final-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(650px, 100%);
+
+    text-align: center;
+}
+
+.final-title {
+    margin-top: 25px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(60px, 8vw, 100px);
+
+    line-height: .85;
+
+    font-weight: 400;
+}
+
+.final-title em {
+    color: var(--rose);
+}
+
+.final-message {
+    margin-top: 40px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+.final-heart {
+    margin-top: 40px;
+
+    color: var(--rose);
+
+    font-family: var(--serif);
+
+    font-size: 55px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final-signature {
+    margin-top: 20px;
+
+    color: #777078;
+
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+.final-signature span {
+    color: var(--rose);
+}
+
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: .15s;
+}
+
+.delay-2 {
+    transition-delay: .3s;
+}
+
+.delay-3 {
+    transition-delay: .45s;
+}
+
+.delay-4 {
+    transition-delay: .6s;
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(16,11,16,.7);
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    color: var(--cream);
+
+    font-size: 20px;
+
+    z-index: 900;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s ease;
+}
+
+.music-button:hover {
+    border-color: var(--rose);
+
+    color: var(--rose);
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .page,
+    .section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    /* -----------------------------
+       OPENING
+    ----------------------------- */
+
+    .opening-title {
+        font-size: 61px;
+    }
+
+    .opening-description {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------
+       BIRTHDAY
+    ----------------------------- */
+
+    .birthday-title {
+        font-size: 66px;
+    }
+
+
+    /* -----------------------------
+       GENERAL HEADINGS
+    ----------------------------- */
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 48px;
+        line-height: .95;
+
+        width: 100%;
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* -----------------------------
+       BOUQUET HEADING
+    ----------------------------- */
+
+    .bouquet-section .section-container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bouquet-section .section-heading {
+        width: 100%;
+        max-width: 350px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    .bouquet-section .section-heading h2 {
+        font-size: 43px;
+        line-height: .95;
+
+        max-width: 340px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+    }
+
+    .bouquet-section .section-description {
+        width: 100%;
+        max-width: 300px;
+
+        margin: 20px auto 0;
+
+        text-align: center;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------
+       BOUQUET
+    ----------------------------- */
+
+    .bouquet {
+        width: 350px;
+        height: 390px;
+
+        margin: 0 auto;
+
+        transform: scale(.88);
+
+        transform-origin: center top;
+    }
+
+
+    /* -----------------------------
+       FLOWER MESSAGE
+    ----------------------------- */
+
+    .flower-message {
+        width: calc(100% - 30px);
+
+        max-width: 330px;
+
+        margin: -35px auto 0;
+
+        font-size: 20px;
+
+        line-height: 1.4;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* -----------------------------
+       LETTER
+    ----------------------------- */
+
+    .letter-paper {
+        padding: 35px 25px;
+
+        font-size: 17px;
+    }
+
+
+    /* -----------------------------
+       MEMORIES
+    ----------------------------- */
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-large,
+    .memory-wide {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .memory-large .photo-wrapper,
+    .memory-wide .photo-wrapper,
+    .photo-wrapper {
+        height: 400px;
+    }
+
+
+    /* -----------------------------
+       TIMELINE
+    ----------------------------- */
+
+    .timeline {
+        padding-left: 45px;
+    }
+
+    .timeline-number {
+        left: -45px;
+    }
+
+    .timeline-content h3 {
+        font-size: 32px;
+    }
+
+    .timeline-content p {
+        font-size: 17px;
+    }
+
+
+    /* -----------------------------
+       REASONS
+    ----------------------------- */
+
+    .reason-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------
+       FINAL
+    ----------------------------- */
+
+    .final-message {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------
+       MUSIC
+    ----------------------------- */
+
+    .music-button {
+        width: 55px;
+        height: 55px;
+
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .opening-title {
+        font-size: 53px;
+    }
+
+    .birthday-title {
+        font-size: 57px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+
+    /* BOUQUET */
+
+    .bouquet-section .section-heading {
+        max-width: 320px;
+    }
+
+    .bouquet-section .section-heading h2 {
+        font-size: 40px;
+
+        max-width: 320px;
+    }
+
+    .bouquet-section .section-description {
+        max-width: 280px;
+
+        font-size: 13px;
+    }
+
+    .bouquet {
+        width: 330px;
+        height: 375px;
+
+        transform: scale(.82);
+
+        transform-origin: center top;
+    }
+
+    .flower-message {
+        max-width: 300px;
+
+        font-size: 19px;
+
+        line-height: 1.4;
+    }
+
+
+    /* LETTER */
+
+    .letter-paper {
+        padding: 30px 20px;
+    }
+
+
+    /* TIMELINE */
+
+    .timeline-content h3 {
+        font-size: 28px;
+    }
+
+    .timeline-content p {
+        font-size: 16px;
+    }
+
+
+    /* FINAL */
+
+    .final-title {
+        font-size: 57px;
+    }
+}

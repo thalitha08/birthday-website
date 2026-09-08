@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100b10">
+
+    <title>A Little Universe For You ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOADING SCREEN
+===================================================== -->
+
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-symbol">✦</div>
+
+        <p>PREPARING SOMETHING SPECIAL</p>
+
+        <div class="loader-line">
+            <span></span>
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div id="stars"></div>
+<div class="grain"></div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="backgroundMusic" loop>
+    <source src="assets/music/music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" class="music-button" aria-label="Toggle music">
+    ♫
+</button>
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<section id="opening" class="page opening-page">
+
+    <div class="ambient-light light-one"></div>
+    <div class="ambient-light light-two"></div>
+
+    <div class="opening-content">
+
+        <p class="eyebrow">
+            A LITTLE SOMETHING FOR YOU
+        </p>
+
+        <h1 class="opening-title">
+            Before you
+            <br>
+            <span>continue...</span>
+        </h1>
+
+        <p class="opening-description">
+            I made a tiny corner of the internet
+            <br>
+            just for someone special.
+        </p>
+
+        <button id="openGift" class="primary-button">
+            <span>Open the gift</span>
+            <span class="button-arrow">↗</span>
+        </button>
+
+        <p class="sound-note">
+            best experienced with sound ♡
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =====================================================
+     SECRET CODE
+===================================================== -->
+
+<section id="secret" class="page secret-page hidden">
+
+    <div class="secret-card">
+
+        <div class="secret-icon">
+            ✦
+        </div>
+
+        <p class="eyebrow">
+            A LITTLE SECRET
+        </p>
+
+        <h2>
+            Do you know
+            <br>
+            the <span>magic code?</span>
+        </h2>
+
+        <p class="secret-description">
+            There is something waiting for you
+            <br>
+            on the other side.
+        </p>
+
+        <div class="code-wrapper">
+
+            <input
+                id="secretCode"
+                type="password"
+                maxlength="12"
+                placeholder="enter the secret code"
+                autocomplete="off"
+            >
+
+            <div class="input-line"></div>
+
+        </div>
+
+        <button id="unlockButton" class="primary-button">
+            <span>Unlock</span>
+            <span>♡</span>
+        </button>
+
+        <p id="codeMessage" class="code-message"></p>
+
+        <p class="code-hint">
+            hint: something meaningful to both of you
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<main id="mainWebsite" class="hidden">
+
+
+<!-- =====================================================
+     BIRTHDAY HERO
+===================================================== -->
+
+<section id="birthday" class="section birthday-section">
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+
+        <p class="eyebrow reveal">
+            TODAY IS YOUR DAY
+        </p>
+
+        <h1 class="birthday-title reveal delay-1">
+            Happy Birthday,
+            <br>
+            <span>Sayangku.</span>
+        </h1>
+
+        <p class="hero-subtitle reveal delay-2">
+            A little universe made
+            <br>
+            especially for you.
+        </p>
+
+
+        <!-- CAKE -->
+
+        <div id="cake" class="cake-container reveal delay-3">
+
+            <div class="cake-glow"></div>
+
+            <div class="cake">
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="cake-top"></div>
+
+                <div class="cake-body">
+
+                    <div class="cake-line"></div>
+                    <div class="cake-line"></div>
+                    <div class="cake-line"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="cake-hint">
+            tap the candle ♡
+        </p>
+
+        <button class="scroll-down" data-target="letter">
+            continue ↓
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section id="letter" class="section cream-section">
+
+    <div class="section-container narrow">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow dark-eyebrow">
+                01 — A LETTER FOR YOU
+            </p>
+
+            <h2>
+                A few things
+                <br>
+                <em>I wanted to say.</em>
+            </h2>
+
+        </div>
+
+
+        <article class="letter-paper reveal">
+
+            <div class="paper-decoration">
+                ✦
+            </div>
+
+            <p class="letter-greeting">
+                Hi, birthday boy ♡
+            </p>
+
+            <p>
+                aku nggak tahu harus mulai dari mana,
+                karena kalau harus menceritakan semuanya,
+                rasanya satu halaman ini nggak akan pernah cukup.
+            </p>
+
+            <p>
+                Kalau dipikir-pikir, lucu juga ya.
+                Kita awalnya cuma dua orang asing yang
+                dipertemukan lewat sebuah aplikasi bernama Timo.
+                Bahkan waktu itu aku nggak pernah kepikiran
+                kalau seseorang yang awalnya cuma aku kenal
+                dari layar, akhirnya bisa menjadi seseorang
+                yang begitu berarti buat aku.
+            </p>
+
+            <p>
+                Dari yang awalnya cuma sekadar ngobrol,
+                waktu berjalan dan kita mulai semakin dekat.
+                Ada banyak percakapan, banyak cerita,
+                sampai akhirnya muncul rasa nyaman
+                yang tumbuh begitu saja.
+            </p>
+
+            <p>
+                Sampai akhirnya tanggal
+                <strong>1 Juli</strong> menjadi salah satu
+                tanggal yang punya tempat sendiri
+                di cerita kita.
+            </p>
+
+            <p>
+                Dan salah satu hal yang sampai sekarang
+                masih aku ingat adalah ketika akhirnya
+                kita bertemu secara langsung.
+                Setelah sekian lama cuma mengenal satu sama lain
+                lewat layar, akhirnya kita benar-benar
+                berdiri di tempat yang sama.
+            </p>
+
+            <p>
+                Terima kasih karena sudah menjadi bagian
+                dari perjalanan hidup aku sampai hari ini.
+                Terima kasih untuk waktu, cerita,
+                perhatian, tawa, dan hal-hal kecil
+                yang mungkin terlihat sederhana,
+                tapi ternyata punya arti yang besar.
+            </p>
+
+            <p>
+                Di hari ulang tahunmu ini,
+                aku cuma berharap semoga hidup selalu
+                memperlakukan kamu dengan baik.
+                Semoga langkahmu dimudahkan,
+                semoga apa yang kamu perjuangkan
+                perlahan menemukan jalannya,
+                dan semoga kamu selalu punya alasan
+                untuk tetap tersenyum.
+            </p>
+
+            <p>
+                Selamat bertambah usia, Sayangku.
+                Semoga di usia yang baru ini,
+                kamu menjadi versi dirimu yang lebih baik,
+                lebih kuat, dan lebih bahagia.
+            </p>
+
+            <p>
+                Dan semoga, di antara begitu banyak hal
+                yang akan kamu temui nantinya,
+                cerita kecil tentang kita
+                tetap menjadi salah satu cerita
+                yang kamu ingat. ♡
+            </p>
+
+            <p class="letter-signature">
+                With love,
+                <br>
+                <span>your wife ♡</span>
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DIGITAL BOUQUET
+===================================================== -->
+
+<section id="bouquet" class="section bouquet-section">
+
+    <div class="section-container">
+
+        <div class="section-heading centered reveal">
+
+            <p class="eyebrow">
+                02 — A DIGITAL BOUQUET
+            </p>
+
+            <h2>
+                Flowers for
+                <br>
+                <em>your special day.</em>
+            </h2>
+
+            <p class="section-description">
+                Tap the flowers and watch them bloom.
+            </p>
+
+        </div>
+
+
+        <!-- ===============================
+             BOUQUET
+        ================================ -->
+
+        <div class="bouquet">
+
+            <!-- STEMS -->
+
+            <div class="stem stem-1"></div>
+            <div class="stem stem-2"></div>
+            <div class="stem stem-3"></div>
+            <div class="stem stem-4"></div>
+            <div class="stem stem-5"></div>
+
+
+            <!-- LEAVES -->
+
+            <div class="leaf leaf-1"></div>
+            <div class="leaf leaf-2"></div>
+            <div class="leaf leaf-3"></div>
+            <div class="leaf leaf-4"></div>
+
+
+            <!-- FLOWER 1 -->
+
+            <button
+                class="flower flower-1"
+                data-flower="Semoga tahun ini menjadi tahun yang lebih baik dan lebih indah untukmu. ♡"
+                aria-label="Flower 1"
+            >
+                ✿
+            </button>
+
+
+            <!-- FLOWER 2 -->
+
+            <button
+                class="flower flower-2"
+                data-flower="Semoga semua doa yang kamu simpan diam-diam, perlahan menjadi nyata. ♡"
+                aria-label="Flower 2"
+            >
+                ✿
+            </button>
+
+
+            <!-- FLOWER 3 -->
+
+            <button
+                class="flower flower-3"
+                data-flower="Semoga segala lelahmu digantikan dengan kabar baik yang kamu tunggu-tunggu. ♡"
+                aria-label="Flower 3"
+            >
+                ✿
+            </button>
+
+
+            <!-- FLOWER 4 -->
+
+            <button
+                class="flower flower-4"
+                data-flower="Semoga keberadaan aku selalu bisa menjadi salah satu alasan kecil buat kamu tersenyum. ♡"
+                aria-label="Flower 4"
+            >
+                ✿
+            </button>
+
+
+            <!-- FLOWER 5 -->
+
+            <button
+                class="flower flower-5"
+                data-flower="Selamat ulang tahun, orang kesayanganku. Semoga hari ini jadi salah satu hari yang paling kamu ingat. ♡"
+                aria-label="Flower 5"
+            >
+                ✿
+            </button>
+
+
+            <!-- BOUQUET WRAPPER -->
+
+            <div class="bouquet-wrap">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- FLOWER MESSAGE -->
+
+        <p id="flowerMessage" class="flower-message"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section id="memories" class="section memories-section">
+
+    <div class="section-container">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                03 — OUR MEMORIES
+            </p>
+
+            <h2>
+                Little moments,
+                <br>
+                <em>big memories.</em>
+            </h2>
+
+            <p class="section-description">
+                Some moments are too special
+                to let them disappear.
+            </p>
+
+        </div>
+
+
+        <div class="memory-grid">
+
+
+            <!-- PHOTO 1 -->
+
+            <article class="memory-card memory-large reveal">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="photo1.jpeg"
+                        alt="Our memory"
+                        onerror="this.style.display='none'"
+                    >
+
+                    <div class="photo-placeholder">
+                        PHOTO 01
+                    </div>
+
+                </div>
+
+                <div class="memory-caption">
+
+                    <span>
+                        MEMORY 01
+                    </span>
+
+                    <p>
+                        salah satu momen yang ingin selalu aku simpan. ♡
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 2 -->
+
+            <article class="memory-card reveal delay-1">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="photo2.jpeg"
+                        alt="Our memory"
+                        onerror="this.style.display='none'"
+                    >
+
+                    <div class="photo-placeholder">
+                        PHOTO 02
+                    </div>
+
+                </div>
+
+                <div class="memory-caption">
+
+                    <span>
+                        MEMORY 02
+                    </span>
+
+                    <p>
+                        kamu yang kecil, jauh sebelum aku mengenalmu. ♡
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 3 -->
+
+            <article class="memory-card reveal delay-2">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="photo3.jpeg"
+                        alt="Our memory"
+                        onerror="this.style.display='none'"
+                    >
+
+                    <div class="photo-placeholder">
+                        PHOTO 03
+                    </div>
+
+                </div>
+
+                <div class="memory-caption">
+
+                    <span>
+                        MEMORY 03
+                    </span>
+
+                    <p>
+                        dulu hanya seorang anak kecil,
+                        sekarang menjadi seseorang
+                        yang begitu berarti.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PHOTO 4 -->
+
+            <article class="memory-card memory-wide reveal">
+
+                <div class="photo-wrapper">
+
+                    <img
+                        src="photo4.jpeg"
+                        alt="Our memory"
+                        onerror="this.style.display='none'"
+                    >
+
+                    <div class="photo-placeholder">
+                        PHOTO 04
+                    </div>
+
+                </div>
+
+                <div class="memory-caption">
+
+                    <span>
+                        MEMORY 04
+                    </span>
+
+                    <p>
+                        dan tentu saja, harus ada sedikit bagian
+                        dari aku di sini. ♡
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section id="timeline" class="section cream-section">
+
+    <div class="section-container narrow">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow dark-eyebrow">
+                04 — OUR TIMELINE
+            </p>
+
+            <h2>
+                How we got
+                <br>
+                <em>here.</em>
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- 01 -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-number">
+                    01
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        AWAL CERITA
+                    </span>
+
+                    <h3>
+                        Semuanya dimulai dari sini
+                    </h3>
+
+                    <p>
+                        Awalnya, kita hanya dua orang asing
+                        yang dipertemukan lewat sebuah aplikasi
+                        bernama Timo.
+
+                        <br><br>
+
+                        Saat itu, aku bahkan nggak pernah
+                        menyangka kalau dari sekadar mencari uang,
+                        aku justru akan menemukan seseorang
+                        yang akhirnya menjadi begitu berarti.
+
+                        <br><br>
+
+                        Beberapa bulan berlalu, kita mulai
+                        semakin dekat. Yang awalnya hanya
+                        sekadar berbicara, perlahan berubah
+                        menjadi rasa nyaman yang tumbuh
+                        tanpa kita sadari.
+
+                        <br><br>
+
+                        Sampai akhirnya, pada tanggal
+                        <strong>1 Juli</strong>, kita resmi
+                        memulai cerita ini bersama.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-number">
+                    02
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        PERTEMUAN PERTAMA
+                    </span>
+
+                    <h3>
+                        Akhirnya bertemu secara langsung
+                    </h3>
+
+                    <p>
+                        Pada tanggal
+                        <strong>17 atau 18 Februari 2026</strong>,
+                        untuk pertama kalinya kita bertemu secara langsung.
+
+                        <br><br>
+
+                        Setelah sekian lama hanya mengenal satu sama lain
+                        lewat layar, akhirnya aku bisa melihat kamu
+                        berdiri di depan aku.
+
+                        <br><br>
+
+                        Hari itu menjadi salah satu momen yang membuat
+                        aku semakin yakin bahwa apa yang kita jalani
+                        bukan sekadar kata-kata.
+
+                        <br><br>
+
+                        Kamu rela menempuh perjalanan yang jauh
+                        hanya untuk datang dan menemui aku.
+                        Dan dari sana, aku belajar bahwa terkadang
+                        keseriusan seseorang nggak perlu dijelaskan
+                        panjang-panjang — cukup dibuktikan
+                        dengan langkah yang dia ambil.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article class="timeline-item reveal">
+
+                <div class="timeline-number">
+                    03
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        HARI INI
+                    </span>
+
+                    <h3>
+                        Hari spesialmu ♡
+                    </h3>
+
+                    <p>
+                        Di perputaran semesta yang ke-365,
+                        kamu berhasil melewati banyak badai.
+
+                        <br><br>
+
+                        Selamat ya, telah menjadi salah satu
+                        manusia pilihan Tuhan untuk tetap singgah
+                        di bumi hingga usiamu yang sekarang.
+
+                        <br><br>
+
+                        Semoga di perputaran-perputaran berikutnya,
+                        semesta lebih banyak mempertemukanmu
+                        dengan hal-hal baik.
+
+                        <br><br>
+
+                        Semoga kamu terus tumbuh, terus melangkah,
+                        dan menemukan banyak alasan untuk bahagia.
+
+                        Selamat bertambah usia. ♡
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     REASONS
+===================================================== -->
+
+<section id="reasons" class="section reasons-section">
+
+    <div class="section-container">
+
+        <div class="section-heading centered reveal">
+
+            <p class="eyebrow">
+                05 — JUST BECAUSE
+            </p>
+
+            <h2>
+                4 reasons
+                <br>
+                <em>why you matter to me.</em>
+            </h2>
+
+        </div>
+
+
+        <div class="reason-grid">
+
+
+            <button
+                class="reason-card reveal"
+                data-reason="Karena dari sekian banyak orang yang aku temui, entah kenapa kamu berhasil menjadi seseorang yang paling nyaman buat aku ceritain banyak hal. ♡"
+            >
+
+                <span>01</span>
+
+                <strong>
+                    your kindness
+                </strong>
+
+                <i>+</i>
+
+            </button>
+
+
+            <button
+                class="reason-card reveal delay-1"
+                data-reason="Karena kamu selalu punya cara sendiri buat bikin hari aku terasa sedikit lebih ringan. Bahkan dari hal-hal kecil."
+            >
+
+                <span>02</span>
+
+                <strong>
+                    the way you make me laugh
+                </strong>
+
+                <i>+</i>
+
+            </button>
+
+
+            <button
+                class="reason-card reveal delay-2"
+                data-reason="Karena banyak hal kecil tentang kamu yang mungkin nggak kamu sadari, tapi justru itu yang sering aku ingat."
+            >
+
+                <span>03</span>
+
+                <strong>
+                    the little things
+                </strong>
+
+                <i>+</i>
+
+            </button>
+
+
+            <button
+                class="reason-card reveal delay-3"
+                data-reason="Karena pada akhirnya, aku nggak butuh kamu menjadi seseorang yang sempurna. aku cuma senang mengenal kamu sebagai diri kamu sendiri. ♡"
+            >
+
+                <strong>
+                    simply being you
+                </strong>
+
+                <i>+</i>
+
+            </button>
+
+        </div>
+
+
+        <div id="reasonPopup" class="reason-popup">
+
+            <button id="closeReason" class="close-popup">
+                ×
+            </button>
+
+            <p id="reasonText"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section id="final" class="section final-section">
+
+    <div class="final-glow"></div>
+
+    <div class="final-content">
+
+        <p class="eyebrow reveal">
+            ONE LAST THING
+        </p>
+
+        <h2 class="final-title reveal delay-1">
+            Until we meet
+            <br>
+            <em>again.</em>
+        </h2>
+
+        <p class="final-message reveal delay-2">
+
+            Happy birthday once again.
+
+            <br><br>
+
+            Semoga di usia yang baru ini,
+            hidup membawa lebih banyak hal baik
+            ke dalam perjalananmu.
+
+            Semoga semua yang sedang kamu perjuangkan
+            perlahan menemukan jalannya.
+
+            <br><br>
+
+            Terima kasih sudah menjadi bagian
+            dari cerita aku sampai sejauh ini.
+
+            Terima kasih sudah hadir,
+            bertahan, dan menciptakan begitu banyak
+            cerita yang akhirnya bisa aku simpan
+            sebagai kenangan.
+
+            <br><br>
+
+            Kalau suatu hari nanti kamu membuka website ini lagi,
+            aku harap kamu masih bisa tersenyum
+            saat mengingat hari ini.
+
+        </p>
+
+
+        <div class="final-heart reveal delay-3">
+            ♡
+        </div>
+
+
+        <p class="final-signature reveal delay-4">
+
+            from someone who is grateful
+            <br>
+            to have met you.
+
+            <br><br>
+
+            <span>— Kekasihmu ♡</span>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
