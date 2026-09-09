@@ -43,12 +43,6 @@ const secretCode =
 const codeMessage =
     document.getElementById("codeMessage");
 
-const music =
-    document.getElementById("backgroundMusic");
-
-const musicButton =
-    document.getElementById("musicButton");
-
 const cake =
     document.getElementById("cake");
 
@@ -186,12 +180,6 @@ function unlockWebsite() {
                 behavior: "instant"
             });
 
-
-            /*
-                Browser biasanya hanya mengizinkan
-                audio setelah user melakukan interaksi.
-            */
-
         }, 700);
 
 
@@ -255,6 +243,7 @@ secretCode.addEventListener(
 
     }
 );
+
 
 /* =====================================================
    CAKE / CANDLE
@@ -356,58 +345,69 @@ revealElements();
 
 
 /* =====================================================
-   FLOWERS
+   FLOWERS (DIPERBAIKI - PASTI MUNCUL PESANNYA)
 ===================================================== */
 
-document
-    .querySelectorAll(".flower")
-    .forEach(flower => {
-
-        flower.addEventListener(
-            "click",
-            () => {
-
-                const message =
-                    flower.dataset.flower;
-
-                flowerMessage.textContent =
-                    message;
-
-                flowerMessage.classList.add(
-                    "show"
-                );
-
-
-                flower.animate(
-
-                    [
-                        {
-                            transform:
-                                "scale(1)"
-                        },
-
-                        {
-                            transform:
-                                "scale(1.25)"
-                        },
-
-                        {
-                            transform:
-                                "scale(1)"
-                        }
-
-                    ],
-
-                    {
-                        duration: 500
-                    }
-
-                );
-
+document.addEventListener("DOMContentLoaded", function() {
+    
+    console.log("🌸 DOM siap! Mencari bunga...");
+    
+    const flowers = document.querySelectorAll(".flower");
+    const flowerMessage = document.getElementById("flowerMessage");
+    
+    console.log("Jumlah bunga ditemukan:", flowers.length);
+    console.log("Elemen flowerMessage:", flowerMessage);
+    
+    // Kalau flowerMessage gak ada, berhenti
+    if (!flowerMessage) {
+        console.log("❌ ERROR: #flowerMessage tidak ditemukan di HTML!");
+        return;
+    }
+    
+    // Kalau gak ada bunga, berhenti
+    if (flowers.length === 0) {
+        console.log("❌ ERROR: Tidak ada elemen .flower ditemukan!");
+        return;
+    }
+    
+    flowers.forEach(function(flower, index) {
+        console.log("🌸 Bunga ke-" + (index + 1) + " ditemukan!");
+        
+        flower.addEventListener("click", function(e) {
+            e.stopPropagation();
+            
+            // Ambil pesan dari atribut data-flower
+            const message = this.getAttribute("data-flower");
+            
+            console.log("🌷 Bunga diklik! Pesan:", message);
+            
+            if (message) {
+                // Tampilkan pesan di layar
+                flowerMessage.textContent = message;
+                flowerMessage.classList.add("show");
+                flowerMessage.style.opacity = "1";
+                flowerMessage.style.transform = "translateY(0)";
+                
+                // Animasi bounce pada bunga
+                this.style.transition = "transform 0.3s cubic-bezier(.2,.8,.2,1)";
+                this.style.transform = "scale(1.4)";
+                setTimeout(() => {
+                    this.style.transform = "scale(1)";
+                }, 300);
+                
+            } else {
+                console.log("❌ ERROR: Bunga tidak punya atribut data-flower!");
+                flowerMessage.textContent = "🌸 Pesan untukmu ♡";
+                flowerMessage.classList.add("show");
+                flowerMessage.style.opacity = "1";
+                flowerMessage.style.transform = "translateY(0)";
             }
-        );
-
+        });
     });
+    
+    console.log("✅ Selesai! " + flowers.length + " bunga siap diklik.");
+    
+});
 
 
 /* =====================================================
