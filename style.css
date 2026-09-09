@@ -1007,13 +1007,13 @@ img {
 
 
 /* =====================================================
-   FLOWER MESSAGE
+   FLOWER MESSAGE (DIPERBAIKI)
 ===================================================== */
 
 .flower-message {
     width: min(90%, 520px);
 
-    margin: -5px auto 0;
+    margin: 20px auto 0;
 
     text-align: center;
 
@@ -1027,15 +1027,27 @@ img {
 
     min-height: 70px;
 
-    padding: 0 10px;
+    padding: 20px 10px;
 
     opacity: 0;
 
     transform: translateY(10px);
 
     transition:
-        opacity .4s ease,
-        transform .4s ease;
+        opacity .5s ease,
+        transform .5s ease;
+
+    background: rgba(217,164,183,.08);
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(217,164,183,.15);
+}
+
+.flower-message.show {
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 
@@ -1330,7 +1342,7 @@ img {
     transition: .3s ease;
 }
 
-.reason-popup.active {
+.reason-popup.show {
     opacity: 1;
     visibility: visible;
 
@@ -1491,46 +1503,6 @@ img {
 
 
 /* =====================================================
-   MUSIC BUTTON
-===================================================== */
-
-.music-button {
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(16,11,16,.7);
-
-    border: 1px solid rgba(255,255,255,.2);
-
-    color: var(--cream);
-
-    font-size: 20px;
-
-    z-index: 900;
-
-    backdrop-filter: blur(10px);
-
-    transition: .3s ease;
-}
-
-.music-button:hover {
-    border-color: var(--rose);
-
-    color: var(--rose);
-
-    transform: scale(1.05);
-}
-
-
-/* =====================================================
    MOBILE
 ===================================================== */
 
@@ -1659,7 +1631,7 @@ img {
 
         max-width: 330px;
 
-        margin: -35px auto 0;
+        margin: 15px auto 0;
 
         font-size: 20px;
 
@@ -1668,6 +1640,8 @@ img {
         text-align: center;
 
         overflow-wrap: anywhere;
+
+        padding: 15px 10px;
     }
 
 
@@ -1741,18 +1715,6 @@ img {
         font-size: 15px;
     }
 
-
-    /* -----------------------------
-       MUSIC
-    ----------------------------- */
-
-    .music-button {
-        width: 55px;
-        height: 55px;
-
-        right: 18px;
-        bottom: 18px;
-    }
 }
 
 
