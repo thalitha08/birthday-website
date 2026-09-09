@@ -256,36 +256,6 @@ secretCode.addEventListener(
     }
 );
 
-
-/* =====================================================
-   MUSIC (DIPERBAIKI - TIDAK ERROR WALAU TANPA FILE MP3)
-===================================================== */
-
-// Cek dulu apakah elemen musik ada di halaman
-if (music && musicButton) {
-    musicButton.addEventListener("click", () => {
-        if (music.paused) {
-            music.play()
-                .then(() => {
-                    musicButton.classList.add("playing");
-                })
-                .catch(() => {
-                    // Kalau gagal main (misal file gak ada), kasih tahu user
-                    console.log("Musik tidak bisa diputar. Pastikan file MP3 tersedia.");
-                });
-        } else {
-            music.pause();
-            musicButton.classList.remove("playing");
-        }
-    });
-} else {
-    // Kalau gak ada elemen musik, sembunyikan tombolnya aja
-    if (musicButton) {
-        musicButton.style.display = "none";
-    }
-}
-
-
 /* =====================================================
    CAKE / CANDLE
 ===================================================== */
